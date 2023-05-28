@@ -1,0 +1,17 @@
+Data,mAP,Training time,pipeline
+custom,0.379,0.01,NO AUG
+custom,0.617,0.01,YOLOv5 Low
+custom,0.529,0.011,YOLOv5 High
+custom,0.859,0.009,RRA
+wall damage,0.21,0.12,NO AUG
+wall damage,0.471,0.123,YOLOv5 Low
+wall damage,0.399,0.125,YOLOv5 High
+wall damage,0.451,0.125,RRA
+printed circuit board,0.0254,0.159,NO AUG
+printed circuit board,0.0496,0.176,YOLOv5 Low
+printed circuit board,0.0261,0.174,YOLOv5 High
+printed circuit board,0.0426,0.168,RRA
+trail camera,0.925,0.109,NO AUG
+trail camera,0.954,0.127,YOLOv5 Low
+trail camera,0.975,0.135,YOLOv5 High
+trail camera,0.964,0.113,RRA
