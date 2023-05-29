@@ -28,16 +28,23 @@ class Albumentations:
             import albumentations as A
             check_version(A.__version__, '1.0.3', hard=True)  # version requirement
 
-            T = [
-                A.RandomResizedCrop(height=size, width=size, scale=(0.8, 1.0), ratio=(0.9, 1.11), p=0.0),
-                A.Blur(p=0.01),
-                A.MedianBlur(p=0.01),
-                A.ToGray(p=0.01),
-                A.CLAHE(p=0.01),
-                A.RandomBrightnessContrast(p=0.0),
-                A.RandomGamma(p=0.0),
-                A.ImageCompression(quality_lower=75, p=0.0)]  # transforms
-            self.transform = A.Compose(T, bbox_params=A.BboxParams(format='yolo', label_fields=['class_labels']))
+            loaded_transform = A.load('/notebooks/RAA/AUG_1_M.json')
+            # loaded_transform = A.load('/notebooks/RAA/AUG_2_M.json')
+            # loaded_transform = A.load('/notebooks/RAA/AUG_3_M.json')
+            # loaded_transform = A.load('/notebooks/RAA/AUG_4_H.json')
+            # loaded_transform = A.load('/notebooks/RAA/AUG_5_M.json')
+            # loaded_transform = A.load('/notebooks/RAA/AUG_5_extra.json')
+            # loaded_transform = A.load('/notebooks/RAA/AUG_6_extra.json')
+            # loaded_transform = A.load('/notebooks/RAA/AUG_6_M.json')
+            # loaded_transform = A.load('/notebooks/RAA/AUG_7_H.json')
+            # loaded_transform = A.load('/notebooks/RAA/AUG_8_M.json')
+            # loaded_transform = A.load('/notebooks/RAA/AUG_8_H.json')
+            # loaded_transform = A.load('/notebooks/RAA/AUG_NEW.json')
+            # loaded_transform = A.load('/notebooks/RAA/AUG_NEW2.json')
+            # loaded_transform = A.load('/notebooks/RAA/AUG_NEW3.json')
+
+        
+            self.transform = loaded_transform
 
             LOGGER.info(prefix + ', '.join(f'{x}'.replace('always_apply=False, ', '') for x in T if x.p))
         except ImportError:  # package not installed, skip
